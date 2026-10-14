@@ -1,0 +1,56 @@
+{
+  "_comment": "Which shared reference files are copied into each skill's references/ folder by scripts/build.py. Edit shared/references/*.md, never the copies inside skills/.",
+  "ds-solution-plan": [
+    "solution-plan-template.md",
+    "intake-questionnaire.md",
+    "quality-gates.md",
+    "use-case-examples.md",
+    "problem-taxonomy.md",
+    "domain-healthcare.md",
+    "domain-bfsi.md",
+    "domain-retail.md"
+  ],
+  "ds-problem-framing": [
+    "problem-taxonomy.md",
+    "intake-questionnaire.md",
+    "domain-healthcare.md",
+    "domain-bfsi.md",
+    "domain-retail.md"
+  ],
+  "ds-data-assessment": [
+    "preprocessing-playbook.md",
+    "leakage-checklist.md",
+    "domain-healthcare.md",
+    "domain-bfsi.md",
+    "domain-retail.md"
+  ],
+  "ds-model-selection": [
+    "algorithm-selection-matrix.md",
+    "problem-taxonomy.md"
+  ],
+  "ds-experiment-design": [
+    "experiment-design-playbook.md",
+    "algorithm-selection-matrix.md",
+    "evaluation-metrics-catalog.md"
+  ],
+  "ds-validation-leakage": [
+    "validation-strategy-catalog.md",
+    "leakage-checklist.md"
+  ],
+  "ds-statistical-inference": [
+    "statistical-testing-catalog.md",
+    "causal-inference-designs.md"
+  ],
+  "ds-evaluation-deployment": [
+    "evaluation-metrics-catalog.md",
+    "deployment-monitoring-playbook.md",
+    "domain-healthcare.md",
+    "domain-bfsi.md",
+    "domain-retail.md"
+  ],
+  "ds-plan-review": [
+    "quality-gates.md",
+    "leakage-checklist.md",
+    "solution-plan-template.md"
+  ]
+}

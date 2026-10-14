@@ -38,7 +38,11 @@ Workflow for every inferential question:
 Inputs: α, power (1−β, default 0.8), baseline rate/variance, **minimum detectable effect (MDE)**, allocation ratio,
 intra-cluster correlation (design effect = 1 + (m−1)·ICC for cluster randomisation).
 Approximation for two proportions per group: n ≈ (z₁₋α/₂ + z₁₋β)² · [p₁(1−p₁)+p₂(1−p₂)] / (p₁−p₂)².
-Report the MDE achievable with available sample if n is fixed. Underpowered studies → "absence of evidence ≠ evidence of absence".
+Report the MDE achievable with available sample if n is fixed.
+**Cluster-randomised / stepped designs:** power is driven by the *number of clusters* (stores, branches, wards), the ICC, cluster size,
+number of waves/steps, and pre-period covariate adjustment (which can reduce variance substantially). With few clusters (tens to a
+few hundred), compare a parallel-arm cluster randomisation against a stepped-wedge explicitly, and plan a simulation-based power
+analysis using pre-period data. Express MDEs symbolically or via simulation. **Never invent σ, ICC or baseline rates.** Underpowered studies → "absence of evidence ≠ evidence of absence".
 
 ## 4. Multiple testing
 - Family-wise error (few confirmatory tests, high stakes): Bonferroni, Holm.

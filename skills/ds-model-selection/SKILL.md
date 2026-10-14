@@ -16,7 +16,9 @@ options on proper out-of-sample validation.
 
 1. **Confirm the formulation** (from framing): target type, data structure (i.i.d., grouped, temporal, spatial),
    scale (rows, entities, series), feature types, interpretability and latency constraints, and the regulatory context.
-2. **Specify baseline(s)**, at least one and ideally including the client's *current* rule or process. For each,
+2. **Specify baseline(s)**, at least one and ideally including the client's *current* rule or process. Always include
+   the **pure canonical baseline** for the task in its unmodified form (e.g., pure seasonal-naive for forecasting, prevalence for
+   classification, mean/median for regression). Adjusted variants are added alongside it, never in its place. For each,
    give inputs, assumptions, evaluation protocol and limitations, and define **the bar candidates must beat**
    (e.g., "beat seasonal-naive WAPE by an agreed margin on all walk-forward windows"). Do **not** invent baseline scores.
 3. **Shortlist 2–4 candidates** in priority order (simple → complex). For each give: why it is plausible here,

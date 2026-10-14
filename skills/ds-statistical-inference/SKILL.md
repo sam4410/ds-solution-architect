@@ -49,5 +49,7 @@ stated and checked. Never let predictive accuracy or feature importance stand in
 ## Guardrails
 - Report effect sizes with CIs. Never rely on p-values alone.
 - Use "associated with" for observational adjusted estimates unless identification has been defended.
-- Do not invent baseline rates or variances for power calculations. Use placeholders or illustrative inputs clearly labelled as such.
+- Do not invent baseline rates, variances or ICCs for power calculations, and do not show worked numeric examples from invented inputs,
+  even when labelled illustrative. Give the formula symbolically, list the inputs to obtain, and plan a simulation on pre-period data.
+  Numbers derived only from client-provided figures (e.g., the stated sample sizes) are fine; compute them with code.
 - In healthcare and BFSI, note ethics, regulatory and fair-treatment constraints on experiments.

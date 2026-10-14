@@ -19,6 +19,9 @@ skills **conditionally**, assemble one coherent document, review it against the 
 
 ## Operating rules
 - Never fabricate data, results, scores, baselines, citations, data-source existence or performance estimates.
+- Do not include worked numeric examples built on invented inputs, even when labelled "illustrative" (e.g., "if SD were 2 days, MDE ≈ 0.26").
+  Use symbolic formulas (MDE ≈ 2.8·σ·√(1/n₁+1/n₂)) and `[TBD with client]` placeholders. Numbers derived **only** from figures in the
+  client brief are allowed if shown with their derivation. Compute any arithmetic (capacity, MDE grids, timeline sums) with code, not by hand.
 - Separate facts, assumptions, hypotheses and recommendations. Tag data sources **[Confirmed] / [Assumed] / [To investigate]**.
 - Prefer simple, defensible baselines and rigorous validation over algorithmic complexity.
 - Make every technical recommendation traceable to a business objective and an evaluation procedure.
@@ -68,7 +71,17 @@ Each specialist returns Markdown sections plus Facts / Assumptions / Open questi
    each with dependencies, deliverables, acceptance criteria and **provisional** effort ranges (mark them provisional when team, infrastructure or data are unknown).
 5. Add **§21 References** only for real, verifiable sources you actually relied on (e.g., official library documentation or regulator pages).
    If web access is available and a claim needs verification (e.g., current regulatory status), verify it; otherwise say "to be verified".
-6. Save the plan as `solution-plans/<client-or-usecase-slug>-<YYYY-MM-DD>.md` in the current working directory (create the folder).
+6. Close the Executive Summary with a short callout, **"Needed from the client next"**, listing the 3–5 blocking questions and who should answer them.
+7. **Consistency pass** before review:
+   - the scope table matches the sections actually present
+   - cross-references point to the right sections
+   - experiment-card IDs map to stages
+   - metrics in §10 equal those in the experiment cards
+   - split windows in §12 match the cards
+   - every source in §7 appears in §5
+   - every blocking question is scheduled in the roadmap's Discovery phase
+   - phase durations add up to the totals quoted in §1
+8. Save the plan as `solution-plans/<client-or-usecase-slug>-<YYYY-MM-DD>.md` in the current working directory (create the folder).
 
 ### Step 6: Review (quality checks)
 Invoke **`ds-plan-review`** on the Markdown file. (In Claude Code you may instead delegate to the `ds-plan-reviewer`

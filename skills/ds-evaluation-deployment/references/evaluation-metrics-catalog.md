@@ -53,6 +53,10 @@ before test. Report metrics at the chosen threshold plus threshold-free metrics.
 | Interval coverage & width | % actuals within PI; mean width | Planning with uncertainty | Coverage without width is gameable |
 | Business: service level, stock-out rate, inventory cost, lost sales | Simulated from forecasts + policy | The real objective | Needs inventory policy simulation |
 
+For forecasting plans, report **error by horizon as a headline metric** (not only a diagnostic) and include at least one
+**offline cost-weighted metric** that reflects the decision, e.g., pinball loss at the service-level quantile, or a weighted
+error with under/over-forecast cost ratio `[TBD with client]`.
+
 **Censored demand warning:** during stock-outs, sales ≠ demand. Exclude, flag or impute unconstrained demand before scoring.
 
 ## 4. Ranking & recommendation

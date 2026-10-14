@@ -25,6 +25,10 @@ at that moment, which entities are new, and how far ahead the prediction is made
      gap or embargo (≥ label horizon or data latency), point-in-time data vintage, and coverage of seasonal cycles.
      Include a small ASCII timeline.
    - Grouped: the grouping key(s) and any linked entities.
+   - Repeated-entity snapshot designs (customer-month, patient-encounter) evaluated out-of-time: also add an
+     **entity-disjoint sensitivity fold** (entities unseen in training) to estimate performance on new entities. Report both.
+   - Overlapping outcome windows across consecutive origins: state the gap rule explicitly (e.g., the last training origin's
+     target must be fully observed before the evaluation origin).
 5. **Split hygiene**: a locked test set, pipelines that fit transforms in-fold, resampling only in training folds, deduplication before splitting, stratification, and versioned split definitions.
 6. **Leakage audit**: walk through checklist sections A–H. For each item that plausibly applies **to this case**, name the specific
    field or process at risk (e.g., "discharge disposition", "collections flag", "promo plan updated after origin") and the mitigation.

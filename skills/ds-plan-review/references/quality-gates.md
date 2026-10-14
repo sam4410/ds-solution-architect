@@ -16,6 +16,8 @@ fabrication findings**.
 
 ## Fabrication checks (any hit = must fix)
 - [ ] Numeric performance/baseline values stated without client data.
+- [ ] Worked numeric examples built on invented inputs (σ, ICC, base rates), even when labelled "illustrative" or "placeholder".
+- [ ] Arithmetic that does not match its own stated formula or the brief's figures (recompute it).
 - [ ] Data sources, tables or columns asserted as existing without client confirmation.
 - [ ] Citations/regulations that cannot be verified or are misattributed.
 - [ ] Causal language for associational evidence ("drives", "causes", "impact of" from observational/predictive results).

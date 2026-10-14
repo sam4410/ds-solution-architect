@@ -331,7 +331,35 @@ def add_table(doc, header: list[str], rows: list[list[str]]) -> None:
                 para = cells[j].paragraphs[0] if k == 0 else cells[j].add_paragraph()
                 para.paragraph_format.space_after = Pt(1)
                 add_inline(para, part, size=font)
+    _size_columns(tbl, header, rows)
     doc.add_paragraph().paragraph_format.space_after = Pt(2)
+
+
+def _size_columns(tbl, header: list[str], rows: list[list[str]], usable_cm: float = 17.0) -> None:
+    """Give each column a width proportional to its (dampened) average text length."""
+    ncols = len(header)
+    weights = []
+    for j in range(ncols):
+        texts = [header[j]] + [(r[j] if j < len(r) else "") for r in rows]
+        avg = sum(len(re.sub(r"[*`_\[\]]", "", t)) for t in texts) / max(len(texts), 1)
+        longest_word = max((len(w) for t in texts for w in t.split()), default=4)
+        weights.append(max(avg ** 0.7, longest_word * 0.75, 3.0))
+    total = sum(weights)
+    min_cm = 1.4 if ncols > 6 else 1.8
+    widths = [max(usable_cm * w / total, min_cm) for w in weights]
+    scale = usable_cm / sum(widths)
+    widths = [Cm(w * scale) for w in widths]
+    tbl.autofit = False
+    tblPr = tbl._tbl.tblPr
+    layout = OxmlElement("w:tblLayout")
+    layout.set(qn("w:type"), "fixed")
+    tblPr.append(layout)
+    grid = tbl._tbl.tblGrid
+    for j, gc in enumerate(grid.findall(qn("w:gridCol"))):
+        gc.set(qn("w:w"), str(int(widths[j].twips)))
+    for row in tbl.rows:
+        for j, cell in enumerate(row.cells):
+            cell.width = widths[j]
 
 
 def add_callout(doc, lines: list[str]) -> None:

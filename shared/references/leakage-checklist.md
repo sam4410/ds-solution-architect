@@ -8,7 +8,8 @@ dominant importance) are a leakage alarm until proven otherwise.
 - [ ] Every feature has a documented **availability timestamp** ≤ prediction point.
 - [ ] No feature is a consequence/proxy of the outcome (e.g., "collections call made" for default; "discharge disposition = hospice" for mortality; "refund issued" for fraud; "account closed date" for churn).
 - [ ] Aggregates (counts, averages, rolling windows) are computed only from data before the prediction point.
-- [ ] Status fields are point-in-time (snapshot/as-of tables or SCD Type-2), not current values overwritten later.
+- [ ] Status fields are point-in-time (snapshot/as-of tables or SCD Type-2), not current values overwritten later. Watch for
+      **resolution/status updates** on complaints, tickets, claims, disputes and cases: a record resolved *after* the prediction point must appear as open.
 - [ ] Codes assigned after the fact (final diagnosis codes, billing codes, chargeback reasons) are excluded or time-gated.
 
 ## B. Train/test contamination

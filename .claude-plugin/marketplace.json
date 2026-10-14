@@ -1,0 +1,17 @@
+{
+  "name": "ds-solution-architect-marketplace",
+  "owner": {
+    "name": "Manoj Sharma"
+  },
+  "metadata": {
+    "description": "Data Science Solution Architect toolkit for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "ds-solution-architect",
+      "source": "./",
+      "description": "Client use case in, defensible DS/ML solution plan (Word) out. Healthcare, BFSI and Retail packs.",
+      "version": "0.1.0"
+    }
+  ]
+}

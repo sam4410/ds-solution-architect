@@ -1,0 +1,22 @@
+{
+  "name": "ds-solution-architect",
+  "version": "0.1.0",
+  "description": "Turns a client use case into a rigorous, implementation-ready data science / ML solution plan (delivered as a Word document): problem framing, data feasibility, preprocessing, baselines, algorithm trade-offs, metrics, experiment design, validation and leakage control, statistical and causal inference, deployment and monitoring, and a phased roadmap. Includes Healthcare, BFSI and Retail domain packs.",
+  "author": {
+    "name": "Manoj Sharma"
+  },
+  "homepage": "https://github.com/sam4410/ds-solution-architect",
+  "repository": "https://github.com/sam4410/ds-solution-architect",
+  "keywords": [
+    "data-science",
+    "machine-learning",
+    "solution-architecture",
+    "experiment-design",
+    "statistics",
+    "causal-inference",
+    "forecasting",
+    "healthcare",
+    "bfsi",
+    "retail"
+  ]
+}
